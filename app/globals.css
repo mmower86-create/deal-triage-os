@@ -1,3 +1,21 @@
+:root {
+  --dto-bg: #0B0F17;
+  --dto-panel: #0F1624;
+  --dto-card: #131A26;
+  --dto-border: #1F2633;
+  --dto-text: #E5E7EB;
+  --dto-muted: #A3AAB8;
+  --dto-dim: #6B7280;
+  --dto-blue: #3B82F6;
+  --dto-blue2: #60A5FA;
+  --dto-yellow: #EAB308;
+  --dto-red: #EF4444;
+  --dto-green: #22C55E;
+  --dto-shadow: 0 30px 80px rgba(0,0,0,.55);
+  --dto-radius: 18px;
+  --dto-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
 @import "tailwindcss";
 
 :root {
@@ -23,4 +41,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.dto-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* Animation */
+@keyframes dto-float {
+  0%,100% { transform: translateY(0) rotate(12deg); }
+  50% { transform: translateY(-14px) rotate(22deg); }
 }
