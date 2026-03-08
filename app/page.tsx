@@ -1,13 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
-);
 
 // Login Modal Component
 function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
