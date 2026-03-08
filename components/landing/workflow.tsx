@@ -1,36 +1,30 @@
-import { FileText, Cpu, Target, Gauge, ArrowRight } from "lucide-react";
+import { FileText, Cpu, Target, ArrowRight } from "lucide-react";
 
 export function Workflow() {
   const steps = [
     {
       icon: FileText,
       step: "01",
-      title: "Paste seller call notes",
-      description: "Copy your notes from the first seller conversation directly into Deal Triage OS.",
+      title: "Paste Lead",
+      description: "Paste any seller lead, email, call notes, or transcript directly into the system.",
     },
     {
       icon: Cpu,
       step: "02",
-      title: "Four Gate analysis runs",
-      description: "The system evaluates Authority, Timeline, Financial Reality, and Motivation instantly.",
+      title: "Extract Signals",
+      description: "AI extracts 8 structural signals: timeline, authority, decision makers, payoff clarity, listing trigger, motivation, occupancy, and cooperation.",
     },
     {
       icon: Target,
       step: "03",
-      title: "Get CHASE / PARK / DROP verdict",
-      description: "Know immediately whether this lead deserves your time or should be deprioritized.",
-    },
-    {
-      icon: Gauge,
-      step: "04",
-      title: "See Deal Health score (0-5)",
-      description: "Understand the overall strength of the deal at a glance with a quantified health rating.",
+      title: "Get Verdict",
+      description: "Receive an instant CHASE / PARK / DROP classification with a Deal Health score from 1-5.",
     },
     {
       icon: ArrowRight,
-      step: "05",
-      title: "Follow the required next action",
-      description: "Get a specific, actionable next step so you always know exactly what to do.",
+      step: "04",
+      title: "Execute Action",
+      description: "Follow the required next action. Save and export your analyzed leads with structured notes.",
     },
   ];
 
@@ -41,17 +35,17 @@ export function Workflow() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-accent font-mono text-sm mb-3">HOW IT WORKS</p>
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
-            How Deal Triage Works
+            From raw notes to actionable verdict
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            From seller notes to actionable verdict in seconds.
+            Four steps. Instant clarity. No more guessing.
           </p>
         </div>
 
-        {/* Steps - vertical timeline on mobile, horizontal on desktop */}
+        {/* Steps - horizontal on desktop */}
         <div className="relative">
           {/* Desktop: horizontal layout */}
-          <div className="hidden lg:grid lg:grid-cols-5 gap-4">
+          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
             {steps.map((item, index) => (
               <div key={index} className="relative">
                 {/* Connector line */}
@@ -64,8 +58,8 @@ export function Workflow() {
                     <item.icon className="w-8 h-8 text-accent" />
                   </div>
                   <span className="text-xs font-mono text-muted-foreground mb-2">STEP {item.step}</span>
-                  <h3 className="text-base font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}

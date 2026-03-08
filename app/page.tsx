@@ -4,15 +4,10 @@ import { useState } from "react";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
 import { Problem } from "@/components/landing/problem";
-import { FourGates } from "@/components/landing/four-gates";
 import { Workflow } from "@/components/landing/workflow";
-import { OutputPreview } from "@/components/landing/output-preview";
 import { Verdicts } from "@/components/landing/verdicts";
-import { Benefits } from "@/components/landing/benefits";
+import { ProductScreenshot } from "@/components/landing/product-screenshot";
 import { Pricing } from "@/components/landing/pricing";
-import { ExampleAnalysis } from "@/components/landing/example-analysis";
-import { TimeSaved } from "@/components/landing/time-saved";
-import { Founder } from "@/components/landing/founder";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
 import { LoginModal } from "@/components/landing/login-modal";
@@ -52,7 +47,7 @@ export default function LandingPage() {
     <main className="min-h-screen bg-background text-foreground font-sans antialiased">
       <Header onLoginClick={() => setShowLogin(true)} />
       
-      {/* Hero with product preview */}
+      {/* Hero - product explanation */}
       <Hero
         onBuyClick={handleBuyNow}
         onDemoClick={scrollToWorkflow}
@@ -60,41 +55,26 @@ export default function LandingPage() {
         loading={loading}
       />
       
-      {/* Problem section */}
+      {/* Problem - why investors waste time */}
       <Problem />
       
-      {/* Four Gate Framework */}
-      <section id="framework">
-        <FourGates />
-      </section>
-      
-      {/* How it works */}
+      {/* How it works - 4 steps */}
       <section id="how-it-works">
         <Workflow />
       </section>
       
-      {/* Product demonstration */}
-      <OutputPreview />
+      {/* Decision Framework - CHASE / PARK / DROP */}
+      <section id="framework">
+        <Verdicts />
+      </section>
       
-      {/* Verdicts explanation */}
-      <Verdicts />
-      
-      {/* Benefits */}
-      <Benefits />
+      {/* Product screenshot - decision panel and signals */}
+      <ProductScreenshot />
       
       {/* Pricing */}
       <section id="pricing">
         <Pricing onBuyClick={handleBuyNow} loading={loading} />
       </section>
-      
-      {/* Example deal analysis */}
-      <ExampleAnalysis />
-      
-      {/* Time saved */}
-      <TimeSaved />
-      
-      {/* Founder credibility */}
-      <Founder />
       
       {/* Final CTA */}
       <CTA onBuyClick={handleBuyNow} loading={loading} />
