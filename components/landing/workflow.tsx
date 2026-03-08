@@ -5,26 +5,26 @@ export function Workflow() {
     {
       icon: FileText,
       step: "01",
-      title: "Paste Lead",
-      description: "Paste any seller lead, email, call notes, or transcript directly into the system.",
+      title: "Input Lead",
+      description: "Paste notes from a seller call or lead intake form.",
     },
     {
       icon: Cpu,
       step: "02",
       title: "Extract Signals",
-      description: "AI extracts 8 structural signals: timeline, authority, decision makers, payoff clarity, listing trigger, motivation, occupancy, and cooperation.",
+      description: "AI extracts structural signals including: timeline, authority, decision makers, payoff clarity, listing trigger, motivation, occupancy, cooperation.",
     },
     {
       icon: Target,
       step: "03",
       title: "Get Verdict",
-      description: "Receive an instant CHASE / PARK / DROP classification with a Deal Health score from 1-5.",
+      description: "The system instantly classifies the lead as CHASE, PARK, or DROP and assigns a Deal Health score from 1-5.",
     },
     {
       icon: ArrowRight,
       step: "04",
       title: "Execute Action",
-      description: "Follow the required next action. Save and export your analyzed leads with structured notes.",
+      description: "Follow the recommended next action and focus only on deals worth pursuing.",
     },
   ];
 

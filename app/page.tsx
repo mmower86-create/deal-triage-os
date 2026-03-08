@@ -3,10 +3,14 @@
 import { useState } from "react";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
+import { CredibilityStrip } from "@/components/landing/credibility-strip";
 import { Problem } from "@/components/landing/problem";
 import { Workflow } from "@/components/landing/workflow";
+import { ExampleAnalysis } from "@/components/landing/example-analysis";
 import { Verdicts } from "@/components/landing/verdicts";
 import { ProductScreenshot } from "@/components/landing/product-screenshot";
+import { Reality } from "@/components/landing/reality";
+import { Comparison } from "@/components/landing/comparison";
 import { Pricing } from "@/components/landing/pricing";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
@@ -47,7 +51,7 @@ export default function LandingPage() {
     <main className="min-h-screen bg-background text-foreground font-sans antialiased">
       <Header onLoginClick={() => setShowLogin(true)} />
       
-      {/* Hero - product explanation */}
+      {/* 1. Hero */}
       <Hero
         onBuyClick={handleBuyNow}
         onDemoClick={scrollToWorkflow}
@@ -55,28 +59,40 @@ export default function LandingPage() {
         loading={loading}
       />
       
-      {/* Problem - why investors waste time */}
+      {/* 2. Credibility Strip */}
+      <CredibilityStrip />
+      
+      {/* 3. Pain / Problem */}
       <Problem />
       
-      {/* How it works - 4 steps */}
+      {/* 4. How It Works */}
       <section id="how-it-works">
         <Workflow />
       </section>
       
-      {/* Decision Framework - CHASE / PARK / DROP */}
+      {/* 5. Example Analysis */}
+      <ExampleAnalysis />
+      
+      {/* 6. Verdict System */}
       <section id="framework">
         <Verdicts />
       </section>
       
-      {/* Product screenshot - decision panel and signals */}
+      {/* 7. Product Preview */}
       <ProductScreenshot />
       
-      {/* Pricing */}
+      {/* 8. Reality / Industry */}
+      <Reality />
+      
+      {/* 9. Comparison */}
+      <Comparison />
+      
+      {/* 10. Pricing */}
       <section id="pricing">
         <Pricing onBuyClick={handleBuyNow} loading={loading} />
       </section>
       
-      {/* Final CTA */}
+      {/* 11. Final CTA */}
       <CTA onBuyClick={handleBuyNow} loading={loading} />
       
       <Footer />

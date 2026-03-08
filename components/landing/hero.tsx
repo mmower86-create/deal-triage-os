@@ -29,12 +29,14 @@ export function Hero({ onBuyClick, onDemoClick, loading }: HeroProps) {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1]">
               Stop underwriting
               <br />
-              <span className="text-muted-foreground">bad deals.</span>
+              bad deals.
+              <br />
+              <span className="text-muted-foreground">Start triaging them properly.</span>
             </h1>
             
             {/* Subheadline */}
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-              AI-powered acquisition intelligence that analyzes seller conversations and classifies opportunities before you waste hours on the wrong deal.
+              Deal Triage OS analyzes the structural signals behind every lead and instantly tells you whether to <span className="text-accent font-medium">CHASE</span>, <span className="text-warning font-medium">PARK</span>, or <span className="text-destructive font-medium">DROP</span> the deal.
             </p>
             
             {/* CTAs */}
@@ -44,7 +46,7 @@ export function Hero({ onBuyClick, onDemoClick, loading }: HeroProps) {
                 disabled={loading}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-all disabled:opacity-50"
               >
-                {loading ? "Processing..." : "Start Analyzing Deals"}
+                {loading ? "Processing..." : "Start Using Deal Triage OS"}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </button>
               <button
@@ -55,6 +57,11 @@ export function Hero({ onBuyClick, onDemoClick, loading }: HeroProps) {
                 <ChevronDown className="w-4 h-4" />
               </button>
             </div>
+            
+            {/* Supporting text */}
+            <p className="mt-6 text-sm text-muted-foreground">
+              Structural acquisition intelligence for real estate wholesalers.
+            </p>
           </div>
 
           {/* Right: Product preview card */}
