@@ -35,7 +35,7 @@ export function Pricing({ onBuyClick, loading }: PricingProps) {
             Deal Triage OS filters them in seconds.
           </p>
           <p className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-medium">
-            Run your first 50 leads free.
+            Run your first 20 leads free.
           </p>
         </div>
 

@@ -59,7 +59,7 @@ export function Hero({ onBuyClick, onDemoClick, loading }: HeroProps) {
             
             {/* Supporting text */}
             <p className="mt-6 text-sm text-muted-foreground">
-              Analyze your first 50 leads free.
+              Analyze your first 20 leads free.
             </p>
           </div>
 
