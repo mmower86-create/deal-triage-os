@@ -1,7 +1,15 @@
 import { FileText, Cpu, Target } from "lucide-react";
 
+interface Step {
+  icon: typeof FileText;
+  step: string;
+  title: string;
+  description?: string;
+  bullets?: string[];
+}
+
 export function Workflow() {
-  const steps = [
+  const steps: Step[] = [
     {
       icon: FileText,
       step: "01",
@@ -12,13 +20,15 @@ export function Workflow() {
       icon: Cpu,
       step: "02",
       title: "Signals Are Extracted",
-      description: "The system evaluates four deal signals: Motivation, Price Alignment, Property Condition, and Timeline.",
+      description: "The system evaluates four deal signals:",
+      bullets: ["Motivation", "Price Alignment", "Property Condition", "Timeline"],
     },
     {
       icon: Target,
       step: "03",
       title: "Get a Verdict",
-      description: "Each lead receives a clear action: CHASE (worth pursuing), PARK (follow up later), or DROP (structurally dead).",
+      description: "Each lead receives a clear action:",
+      bullets: ["CHASE — worth pursuing", "PARK — follow up later", "DROP — structurally dead"],
     },
   ];
 
@@ -39,7 +49,7 @@ export function Workflow() {
         {/* Steps - horizontal on desktop */}
         <div className="relative">
           {/* Desktop: horizontal layout */}
-          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
+          <div className="hidden lg:grid lg:grid-cols-3 gap-8">
             {steps.map((item, index) => (
               <div key={index} className="relative">
                 {/* Connector line */}
@@ -53,7 +63,19 @@ export function Workflow() {
                   </div>
                   <span className="text-xs font-mono text-muted-foreground mb-2">STEP {item.step}</span>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                  {item.description && (
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                  )}
+                  {item.bullets && (
+                    <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                      {item.bullets.map((bullet, i) => (
+                        <li key={i} className="flex items-center gap-2 justify-center">
+                          <span className="w-1 h-1 rounded-full bg-accent" />
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             ))}
@@ -74,7 +96,19 @@ export function Workflow() {
                 <div className="pt-2 pb-4">
                   <span className="text-xs font-mono text-muted-foreground">STEP {item.step}</span>
                   <h3 className="text-lg font-semibold text-foreground mt-1 mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  {item.description && (
+                    <p className="text-muted-foreground">{item.description}</p>
+                  )}
+                  {item.bullets && (
+                    <ul className="mt-2 space-y-1 text-muted-foreground">
+                      {item.bullets.map((bullet, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="w-1 h-1 rounded-full bg-accent" />
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             ))}
