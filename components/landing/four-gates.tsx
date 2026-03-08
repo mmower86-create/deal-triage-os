@@ -39,11 +39,11 @@ export function FourGates() {
         <div className="max-w-2xl mb-16">
           <p className="text-accent font-mono text-sm mb-3">THE FRAMEWORK</p>
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
-            Four Gates to Deal Viability
+            Every deal is evaluated using four structural signals.
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Every qualified deal must pass all four gates. Fail one, and you&apos;re chasing smoke.
-            Deal Triage OS runs every lead through this framework automatically.
+            The Four Gate Framework ensures you never waste time on structurally invalid deals.
+            Each signal must pass before a lead deserves your attention.
           </p>
         </div>
 
