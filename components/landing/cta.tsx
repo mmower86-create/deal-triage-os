@@ -17,12 +17,12 @@ export function CTA({ onBuyClick, loading }: CTAProps) {
           
           <div className="relative text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground tracking-tight max-w-3xl mx-auto text-balance">
-              Stop wasting hours on deals
+              Stop underwriting leads
               <br />
-              that were never going to close.
+              before qualifying them.
             </h2>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
-              Get Deal Triage OS today and start making smarter decisions on every lead, instantly.
+              Start making instant CHASE / PARK / DROP decisions on every lead today.
             </p>
             <div className="mt-10">
               <button
@@ -30,10 +30,13 @@ export function CTA({ onBuyClick, loading }: CTAProps) {
                 disabled={loading}
                 className="group inline-flex items-center justify-center gap-2 px-10 py-5 bg-foreground text-background text-lg font-medium rounded-lg hover:bg-foreground/90 transition-all disabled:opacity-50"
               >
-                {loading ? "Processing..." : "Get Instant Access — $47"}
+                {loading ? "Processing..." : "Start Membership — $97/month"}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
               </button>
             </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Or save with annual at $970/year (2 months free)
+            </p>
           </div>
         </div>
       </div>

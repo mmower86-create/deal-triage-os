@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
+import { OutputPreview } from "@/components/landing/output-preview";
+import { LiveDemo } from "@/components/landing/live-demo";
 import { Stats } from "@/components/landing/stats";
 import { FourGates } from "@/components/landing/four-gates";
 import { Workflow } from "@/components/landing/workflow";
@@ -35,14 +37,26 @@ export default function LandingPage() {
     }
   };
 
+  const scrollToDemo = () => {
+    document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const openApp = () => {
+    // Navigate to the app - adjust path as needed
+    window.location.href = "/app";
+  };
+
   return (
     <main className="min-h-screen bg-background text-foreground font-sans antialiased">
       <Header onLoginClick={() => setShowLogin(true)} />
       <Hero
         onBuyClick={handleBuyNow}
-        onLoginClick={() => setShowLogin(true)}
+        onDemoClick={scrollToDemo}
+        onAppClick={openApp}
         loading={loading}
       />
+      <OutputPreview />
+      <LiveDemo />
       <Stats />
       <section id="framework">
         <FourGates />
