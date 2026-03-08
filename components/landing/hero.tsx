@@ -55,7 +55,7 @@ export function Hero({ onBuyClick, onLoginClick, loading }: HeroProps) {
           
           {/* Price badge */}
           <p className="mt-6 text-sm text-muted-foreground">
-            <span className="text-accent font-medium">$47</span> one-time payment. Lifetime access.
+            Starting at <span className="text-accent font-medium">$97/month</span> or <span className="text-accent font-medium">$970/year</span> (save 17%)
           </p>
         </div>
       </div>
