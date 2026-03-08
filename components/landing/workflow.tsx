@@ -1,30 +1,24 @@
-import { FileText, Cpu, Target, ArrowRight } from "lucide-react";
+import { FileText, Cpu, Target } from "lucide-react";
 
 export function Workflow() {
   const steps = [
     {
       icon: FileText,
       step: "01",
-      title: "Input Lead",
-      description: "Paste notes from a seller call or lead intake form.",
+      title: "Paste the Lead",
+      description: "Drop the seller message or property description into Deal Triage OS.",
     },
     {
       icon: Cpu,
       step: "02",
-      title: "Extract Signals",
-      description: "AI extracts structural signals including: timeline, authority, decision makers, payoff clarity, listing trigger, motivation, occupancy, cooperation.",
+      title: "Signals Are Extracted",
+      description: "The system evaluates four deal signals: Motivation, Price Alignment, Property Condition, and Timeline.",
     },
     {
       icon: Target,
       step: "03",
-      title: "Get Verdict",
-      description: "The system instantly classifies the lead as CHASE, PARK, or DROP and assigns a Deal Health score from 1-5.",
-    },
-    {
-      icon: ArrowRight,
-      step: "04",
-      title: "Execute Action",
-      description: "Follow the recommended next action and focus only on deals worth pursuing.",
+      title: "Get a Verdict",
+      description: "Each lead receives a clear action: CHASE (worth pursuing), PARK (follow up later), or DROP (structurally dead).",
     },
   ];
 
@@ -35,17 +29,17 @@ export function Workflow() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-accent font-mono text-sm mb-3">HOW IT WORKS</p>
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
-            From raw notes to actionable verdict
+            See how a deal gets triaged
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Four steps. Instant clarity. No more guessing.
+            Three steps. Instant clarity. No more guessing.
           </p>
         </div>
 
         {/* Steps - horizontal on desktop */}
         <div className="relative">
           {/* Desktop: horizontal layout */}
-          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
             {steps.map((item, index) => (
               <div key={index} className="relative">
                 {/* Connector line */}

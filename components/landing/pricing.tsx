@@ -31,7 +31,10 @@ export function Pricing({ onBuyClick, loading }: PricingProps) {
             Simple membership pricing
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            One plan. Everything included. Cancel anytime.
+            Investors waste 30-60 minutes underwriting dead leads. Deal Triage OS filters them in seconds.
+          </p>
+          <p className="mt-4 text-accent font-medium">
+            Run your first 50 leads free.
           </p>
         </div>
 

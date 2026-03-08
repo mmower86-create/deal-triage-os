@@ -59,16 +59,16 @@ export default function LandingPage() {
         loading={loading}
       />
       
-      {/* 2. Credibility Strip */}
-      <CredibilityStrip />
-      
-      {/* 3. Pain / Problem */}
-      <Problem />
-      
-      {/* 4. How It Works */}
+      {/* 2. Product Walkthrough - directly under hero */}
       <section id="how-it-works">
         <Workflow />
       </section>
+      
+      {/* 3. Framework Credibility Line */}
+      <CredibilityStrip />
+      
+      {/* 4. Pain / Problem */}
+      <Problem />
       
       {/* 5. Example Analysis */}
       <ExampleAnalysis />
