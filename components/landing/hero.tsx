@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, ChevronDown, Check, AlertTriangle } from "lucide-react";
+import { TriageOutput } from "./triage-output";
 
 interface HeroProps {
   onBuyClick: () => void;
@@ -72,33 +73,9 @@ export function Hero({ onBuyClick, onDemoClick, loading }: HeroProps) {
                 <span className="ml-4 text-xs font-mono text-muted-foreground">DEAL CLASSIFICATION</span>
               </div>
 
-              {/* Classification */}
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-sm text-muted-foreground">Classification</span>
-                <span className="px-4 py-2 bg-accent/20 text-accent font-bold rounded-lg text-lg">
-                  CHASE
-                </span>
-              </div>
-
-              {/* Deal Health */}
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-sm text-muted-foreground">Deal Health</span>
-                <div className="flex items-center gap-2">
-                  <div className="flex gap-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <div
-                        key={i}
-                        className={`w-2.5 h-7 rounded-sm ${i <= 4 ? "bg-accent" : "bg-muted"}`}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-foreground font-semibold text-lg">4 / 5</span>
-                </div>
-              </div>
-
               {/* Signals */}
               <div className="mb-6">
-                <span className="text-sm text-muted-foreground mb-3 block">Signals</span>
+                <span className="text-xs font-mono text-muted-foreground mb-3 block">SIGNALS</span>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex items-center gap-2 text-sm">
                     <Check className="w-4 h-4 text-accent" />
@@ -119,13 +96,13 @@ export function Hero({ onBuyClick, onDemoClick, loading }: HeroProps) {
                 </div>
               </div>
 
-              {/* Required Action */}
-              <div className="bg-background border border-border rounded-lg p-4">
-                <span className="text-xs font-mono text-muted-foreground mb-2 block">REQUIRED ACTION</span>
-                <p className="text-foreground font-medium text-sm">
-                  Confirm payoff amount and verify decision maker.
-                </p>
-              </div>
+              {/* Triage Output */}
+              <TriageOutput
+                verdict="CHASE"
+                healthScore={4}
+                requiredAction="Confirm payoff amount and verify decision maker."
+                variant="compact"
+              />
             </div>
           </div>
         </div>

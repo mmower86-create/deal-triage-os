@@ -1,4 +1,5 @@
 import { Zap, TrendingUp, HelpCircle, Clock } from "lucide-react";
+import { TriageOutput } from "./triage-output";
 
 export function ExampleAnalysis() {
   const leadSummary = {
@@ -65,41 +66,12 @@ export function ExampleAnalysis() {
               </div>
 
               {/* Right: Verdict */}
-              <div className="p-6 md:p-8 bg-muted/30 flex flex-col justify-center">
-                {/* Verdict */}
-                <div className="mb-8">
-                  <h3 className="text-xs font-mono text-muted-foreground mb-3">VERDICT</h3>
-                  <div className="inline-flex items-center gap-3 px-6 py-4 bg-accent/20 border border-accent/30 rounded-xl">
-                    <Zap className="w-8 h-8 text-accent" />
-                    <span className="text-4xl font-bold text-accent">CHASE</span>
-                  </div>
-                </div>
-
-                {/* Deal Health */}
-                <div className="mb-8">
-                  <h3 className="text-xs font-mono text-muted-foreground mb-3">DEAL HEALTH</h3>
-                  <div className="flex items-center gap-3">
-                    <div className="flex gap-1 flex-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div
-                          key={i}
-                          className={`flex-1 h-8 rounded ${i <= 4 ? "bg-accent" : "bg-muted"}`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-2xl font-bold text-foreground">4 / 5</span>
-                  </div>
-                </div>
-
-                {/* Required Action */}
-                <div>
-                  <h3 className="text-xs font-mono text-muted-foreground mb-3">REQUIRED ACTION</h3>
-                  <div className="bg-background border border-border rounded-lg p-4">
-                    <p className="text-foreground font-medium">
-                      Verify property condition. If acceptable, pursue immediately.
-                    </p>
-                  </div>
-                </div>
+              <div className="p-6 md:p-8 bg-muted/20 flex flex-col justify-center">
+                <TriageOutput
+                  verdict="CHASE"
+                  healthScore={4}
+                  requiredAction="Verify property condition. If acceptable, pursue immediately."
+                />
               </div>
             </div>
           </div>

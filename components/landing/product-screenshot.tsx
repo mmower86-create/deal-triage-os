@@ -1,4 +1,5 @@
 import { Check, AlertTriangle, X, Clock, Users, DollarSign, Home, Handshake, Target, Zap, Calendar } from "lucide-react";
+import { TriageOutput } from "./triage-output";
 
 export function ProductScreenshot() {
   const signals = [
@@ -80,44 +81,15 @@ export function ProductScreenshot() {
 
                 {/* Right: Decision panel */}
                 <div className="space-y-4">
-                  {/* Classification */}
-                  <div className="bg-background border border-accent/30 rounded-xl p-5">
-                    <p className="text-xs font-mono text-muted-foreground mb-3">CLASSIFICATION</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-3xl font-bold text-accent">CHASE</span>
-                      <div className="p-2 bg-accent/20 rounded-lg">
-                        <Zap className="w-6 h-6 text-accent" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Deal Health */}
-                  <div className="bg-background border border-border rounded-xl p-5">
-                    <p className="text-xs font-mono text-muted-foreground mb-3">DEAL HEALTH</p>
-                    <div className="flex items-center gap-3">
-                      <div className="flex gap-1 flex-1">
-                        {[1, 2, 3, 4, 5].map((i) => (
-                          <div
-                            key={i}
-                            className={`flex-1 h-8 rounded ${i <= 4 ? "bg-accent" : "bg-muted"}`}
-                          />
-                        ))}
-                      </div>
-                      <span className="text-2xl font-bold text-foreground">4/5</span>
-                    </div>
-                  </div>
-
-                  {/* Next Action */}
-                  <div className="bg-background border border-border rounded-xl p-5">
-                    <p className="text-xs font-mono text-muted-foreground mb-3">REQUIRED ACTION</p>
-                    <p className="text-foreground font-medium text-sm leading-relaxed">
-                      Verify payoff with lender. Schedule property walkthrough within 48 hours.
-                    </p>
-                  </div>
+                  <TriageOutput
+                    verdict="CHASE"
+                    healthScore={4}
+                    requiredAction="Verify payoff with lender. Schedule property walkthrough within 48 hours."
+                  />
 
                   {/* Action buttons */}
-                  <div className="flex gap-2">
-                    <button className="flex-1 py-2.5 bg-accent text-accent-foreground text-sm font-medium rounded-lg hover:bg-accent/90 transition-colors">
+                  <div className="flex gap-2 pt-2">
+                    <button className="flex-1 py-2.5 bg-accent/80 text-accent-foreground text-sm font-medium rounded-lg hover:bg-accent/70 transition-colors">
                       Save Lead
                     </button>
                     <button className="flex-1 py-2.5 bg-muted text-foreground text-sm font-medium rounded-lg hover:bg-muted/80 transition-colors">
