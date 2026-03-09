@@ -20,23 +20,8 @@ export default function LandingPage() {
   const [loading, setLoading] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
 
-  const handleBuyNow = async () => {
-    setLoading(true);
-
-    try {
-      const response = await fetch("/api/create-checkout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      const { sessionId } = await response.json();
-      window.location.href = `https://checkout.stripe.com/c/pay/${sessionId}`;
-    } catch (error) {
-      console.error("Checkout error:", error);
-      setLoading(false);
-    }
+  const handleBuyNow = () => {
+    window.location.href = "/app";
   };
 
   const scrollToWorkflow = () => {
