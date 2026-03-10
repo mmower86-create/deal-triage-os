@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     }
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4-mini",
+      model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
@@ -68,7 +68,7 @@ export async function POST(req: Request) {
   } catch (error: any) {
     console.error("OpenAI API error:", error);
     return NextResponse.json(
-      { error: "Analysis failed. Please try again." },
+      { error: error.message || "Analysis failed" },
       { status: 500 }
     );
   }
